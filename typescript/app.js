@@ -1,10 +1,13 @@
 "use strict";
 (function () {
-    function saludar(nombre) {
-        console.table('Hola ' + nombre); // Hola Logan
-    }
-    const wolverine = {
-        nombre: 'Logan'
+    const avenger = {
+        nombre: 'Steve',
+        clave: 'Capitan america',
+        poder: 'DROGO'
     };
-    saludar(wolverine.nombre);
+    const extraer = ({ nombre, poder }) => {
+        console.log(nombre);
+        console.log(poder);
+    };
+    extraer(avenger);
 })();
