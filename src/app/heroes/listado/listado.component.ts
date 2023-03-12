@@ -10,6 +10,6 @@ export class ListadoComponent {
   heroeBorrado:string = '';
 
   borrarHeroe():void{    
-    this.heroeBorrado = this.heroes.shift() || 'No hay heroes';
+    this.heroeBorrado = this.heroes.shift() || '';
   }
 }

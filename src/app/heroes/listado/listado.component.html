@@ -1,11 +1,12 @@
 <p>listado de Heroes</p>
 
-<div>
+<div *ngIf="heroeBorrado !== ''">
     <h3>Heroe borrado</h3>
     <span>{{heroeBorrado}}</span>
 </div>
 
 <button (click)="borrarHeroe()">Borrar</button>
+
 <ul>
 
     <li *ngFor="let heroe of heroes; let i = index">
