@@ -20,23 +20,14 @@ export class MainPageComponent {
   ];
 
   nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Nuevo personaje',
+    poder: -999
   }
 
-  agregar() {
-    if (this.nuevo.nombre.trim().length === 0) {
-      return;
-    }
-    console.log(this.nuevo);
-    this.personajes.push(this.nuevo);
-    this.nuevo.nombre = '';
-    this.nuevo.poder = 0;
-
-    this.nuevo = {
-      nombre:'',
-      poder:0
-    }
+  agregarNuevoPersonaje($event:Personaje){
+    console.log($event);
+    this.personajes.push($event);
+    
   }
 
 }
