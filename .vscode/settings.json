@@ -11,7 +11,6 @@
     "tsconfig.app.json": true,
     "tsconfig.json": true,
     "tsconfig.spec.json": true,
-    ".angular": true,
-    "node_modules": true
+    ".angular": true
   }
 }
