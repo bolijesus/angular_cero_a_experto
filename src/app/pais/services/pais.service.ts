@@ -21,5 +21,9 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
+  buscarCapital(termino:string):Observable<Country[]>{
+    return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`)
+  }
+
 
 }
