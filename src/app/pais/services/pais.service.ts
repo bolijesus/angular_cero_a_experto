@@ -24,10 +24,13 @@ export class PaisService {
   buscarCapital(termino:string):Observable<Country[]>{
     return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`)
   }
-
+  
   getPaisPorAlpha(termino:string):Observable<Country[]>{
     return this.http.get<Country[]>(`${this.apiUrl}/alpha/${termino}`)
   }
-
+  
+  buscarRegion(termino:string):Observable<Country[]>{
+    return this.http.get<Country[]>(`${this.apiUrl}/region/${termino}`)
+  }
 
 }
