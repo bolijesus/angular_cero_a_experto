@@ -169,7 +169,7 @@ export class AppComponent {
   }
 
   totalNetoCatedratico(): number {
-    return this.totalBrutoCatedratico() + this.especializacion() + this.maestria() + this.doctorado() + this.postDoctorado()
+    return this.totalMontoCatedratico() + this.totalBrutoCatedratico() + this.especializacion() + this.maestria() + this.doctorado() + this.postDoctorado()
       + this.a1() + this.a() + this.b() + this.c() + this.colciencia() + this.semillero();
   }
 
@@ -200,7 +200,6 @@ export class AppComponent {
   
 
   saludOcacional(): number {
-    console.log(this.totalCategoriasOcacional());
     
     return this.totalCategoriasOcacional() * this.PORCENTAJESALUD;
   }
@@ -318,7 +317,7 @@ export class AppComponent {
 
   totalNetoOcacional(): number {
 
-    return this.totalCategoriasOcacional() + this.totalBrutoCatedratico()+ this.especializacionOcacional() + this.maestriaOcacional() + this.doctoradoOcacional() + this.postDoctoradoOcacional()
+    return this.totalBrutoOcacional() + this.totalCategoriasOcacional() + this.especializacionOcacional() + this.maestriaOcacional() + this.doctoradoOcacional() + this.postDoctoradoOcacional()
     + this.a1Ocacional() + this.aOcacional() + this.bOcacional() + this.cOcacional() + this.colcienciaOcacional() + this.semilleroOcacional();
   }
 

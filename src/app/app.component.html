@@ -155,7 +155,7 @@
     <br>
     <div class="row">
         <div class="col-md-6">
-            <h1 *ngIf="inputCantidadHorasTotales>0 && inputValorHoraCatedra>0 ;else errorHoras">total:
+            <h1 *ngIf="inputCantidadHorasTotales>0 && inputValorHoraCatedra>0 ;else errorHoras">total Catedratico:
                 {{totalNetoCatedratico()|currency}}</h1>
             <ng-template #errorHoras>
                 <div class=" col-md-3 alert alert-danger">Porfavor ingrese el valor y la cantidad de las horas para ver
@@ -163,7 +163,7 @@
             </ng-template>
         </div>
         <div class="col-md-6">
-            <h1>total:
+            <h1>total Ocacional:
                 {{totalNetoOcacional()|currency}}</h1>
         </div>
     </div>
