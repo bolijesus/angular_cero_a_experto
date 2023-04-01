@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
@@ -8,29 +8,40 @@ import { Country } from '../interfaces/pais.interface';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.com/v3.1'
+  private apiUrl: string = 'https://restcountries.com/v3.1';
+
+  get httpParams() {
+    return new HttpParams()
+      .set('fields', 'name,capital,cca2,flags,population')
+  }
 
   constructor(private http: HttpClient) {
 
   }
 
-  buscarPais(termino:string):Observable<Country[]>{
-    
+  buscarPais(termino: string): Observable<Country[]> {
+
     const url = `${this.apiUrl}/name/${termino}`
 
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, {params: this.httpParams});
   }
 
-  buscarCapital(termino:string):Observable<Country[]>{
-    return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`)
+  buscarCapital(termino: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/capital/${termino}`, {params: this.httpParams})
   }
-  
-  getPaisPorAlpha(termino:string):Observable<Country[]>{
+
+  getPaisPorAlpha(termino: string): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.apiUrl}/alpha/${termino}`)
   }
-  
-  buscarRegion(termino:string):Observable<Country[]>{
-    return this.http.get<Country[]>(`${this.apiUrl}/region/${termino}`)
+
+  buscarRegion(termino: string): Observable<Country[]> {
+
+    const url = `${this.apiUrl}/region/${termino}`
+
+    return this.http.get<Country[]>(url, {params: this.httpParams})
+      .pipe(
+        tap(console.log)
+      )
   }
 
 }
