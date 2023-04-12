@@ -5,7 +5,6 @@
     ".gitignore": true,
     ".vscode": true,
     "package-lock.json": true,
-    "package.json": true,
     "README.md": true,
     "tsconfig.app.json": true,
     "tsconfig.json": true,
