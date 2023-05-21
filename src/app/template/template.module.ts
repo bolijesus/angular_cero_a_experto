@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { TemplateRoutingModule } from './template-routing.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { BasicosComponent } from './basicos/basicos.component';
 import { DinamicosComponent } from './dinamicos/dinamicos.component';
 import { SwitchesComponent } from './switches/switches.component';
-import { RouterModule } from '@angular/router';
+import { TemplateRoutingModule } from './template-routing.module';
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    RouterModule,
     TemplateRoutingModule,
-    RouterModule
   ]
 })
 export class TemplateModule { }
